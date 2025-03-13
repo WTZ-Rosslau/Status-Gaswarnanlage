@@ -150,10 +150,10 @@
         get(dataRef).then((snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                document.getElementById('value1').textContent = data.table1.value1 || "";
+                document.getElementById('value1').textContent = data.table1.value || "";
                 document.getElementById('value2').textContent = data.table1.value2 || "";
                 document.getElementById('value3').textContent = data.table1.value3 || "";
-                document.getElementById('value4').textContent = data.table1.value4 || "";
+                document.getElementById('value4').textContent = data.table1.value || "";
                 document.getElementById('value5').textContent = data.table1.value5 || "";
                 document.getElementById('value6').textContent = data.table1.value6 || "";
                 document.getElementById('value7').textContent = data.table1.value7 || "";
