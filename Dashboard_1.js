@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-// Your Firebase configuration (should be the same as your Firebase Console settings)
+// Your Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCygiSFB24M3pkyBA3d_zY_kKtQKxtvetE",
     authDomain: "stand-7.firebaseapp.com",
@@ -29,7 +29,7 @@ onValue(dataRef, (snapshot) => {
     if (data) {
         const value = data.value;    // Access the 'value' field
 
-        // Display the 'value' on your webpage (e.g., in a table cell with id 'valueDisplay')
+        // Display only the value (no "Value:" text)
         document.getElementById("valueDisplay").innerText = value;
     } else {
         console.log("No data found");
