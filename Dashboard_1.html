@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Data Display</title>
-    <!-- Add Firebase SDK -->
+    <!-- Firebase SDK v9+ -->
     <script type="module">
-        // Import the necessary functions from Firebase SDK
-        import { initializeApp } from "firebase/app";
-        import { getAnalytics } from "firebase/analytics";
-        import { getDatabase, ref, onValue } from "firebase/database";
+        // Import necessary Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-        // Your web app's Firebase configuration
+        // Your Firebase configuration (should be the same as your Firebase Console settings)
         const firebaseConfig = {
             apiKey: "AIzaSyCygiSFB24M3pkyBA3d_zY_kKtQKxtvetE",
             authDomain: "stand-7.firebaseapp.com",
@@ -25,7 +24,6 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
 
         // Initialize Realtime Database
         const database = getDatabase(app);
@@ -35,17 +33,21 @@
 
         // Set up a real-time listener for changes
         onValue(dataRef, (snapshot) => {
-            const data = snapshot.val(); // Retrieve the data from the snapshot
-            const value = data.value;    // Access the 'value' field
+            const data = snapshot.val(); // Retrieve data from the snapshot
+            if (data) {
+                const value = data.value;    // Access the 'value' field
 
-            // Display the 'value' on your webpage (e.g., in a div with id 'valueDisplay')
-            document.getElementById("valueDisplay").innerText = `Value: ${value}`;
+                // Display the 'value' on your webpage (e.g., in a div with id 'valueDisplay')
+                document.getElementById("valueDisplay").innerText = `Value: ${value}`;
+            } else {
+                console.log("No data found");
+            }
         });
     </script>
 </head>
 <body>
 
-    <div id="valueDisplay">Value: </div>
+    <div id="valueDisplay">Value: Loading...</div>
 
 </body>
 </html>
