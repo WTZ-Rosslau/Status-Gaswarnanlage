@@ -195,6 +195,60 @@
             <tr><td>Betriebsstatus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         </tbody>
     </table>
+
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+
+    <!-- Firebase Configuration and Logic -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.database(app);
+
+        // Reference to the data in Firebase
+        const dataRef = db.ref("real_time_data");
+
+        // Function to fetch and display data
+        function fetchData() {
+            dataRef.once('value').then(function(snapshot) {
+                const data = snapshot.val();
+                if (data) {
+                    // Display values for the first table
+                    document.getElementById('value1').textContent = data.table1.value1;
+                    document.getElementById('value2').textContent = data.table1.value2;
+                    document.getElementById('value3').textContent = data.table1.value3;
+                    document.getElementById('value4').textContent = data.table1.value4;
+                    document.getElementById('value5').textContent = data.table1.value5;
+                    document.getElementById('value6').textContent = data.table1.value6;
+                    document.getElementById('value7').textContent = data.table1.value7;
+                    document.getElementById('value8').textContent = data.table1.value8;
+
+                    // Display Alarmstatus, Kanalstörung, Betriebsstatus etc., similarly
+                    document.getElementById('alarm1_1').textContent = data.table1.alarm1_1;
+                    document.getElementById('status1').textContent = data.table1.status1;
+                    // Continue this for other rows and table2 similarly...
+                }
+            });
+        }
+
+        // Call the fetch function
+        fetchData();
+
+        // Optionally, set an interval to refresh the data every 5 seconds
+        setInterval(fetchData, 5000); // Refresh data every 5 seconds
+    </script>
     
 
 
