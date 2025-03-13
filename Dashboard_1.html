@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status der Gaswarnanlagen</title>
-    <!-- Favicon Link -->
     <link rel="icon" href="gas-4.jpg" type="image/x-icon">
-    
-    <!-- Link to Raleway font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         body {
-            font-family: 'Raleway', sans-serif; /* Updated to Raleway */
+            font-family: 'Raleway', sans-serif;
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
@@ -25,31 +21,22 @@
             align-items: center;
             padding: 10px 100px;
             background-color: #f1f1f1;
-            color:rgb(110, 106, 102);
-            max-width: 600px; /* Reduced width */
-            margin: 0 auto; /* Center the header */
-            margin-bottom: 50px; /* Adds space below the header */
+            color: rgb(110, 106, 102);
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 50px;
         }
 
-        /* Logo styling */
         header img {
-            width: 100px; /* Adjusted logo size */
+            width: 100px;
             height: auto;
         }
 
-        /* Title text styling - centering */
         .header-title {
             text-align: center;
-            font-size: 1.8rem; /* Adjusted font size */
+            font-size: 1.8rem;
             margin: 0;
             flex-grow: 1;
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-            margin-top: 20px;
-            
         }
 
         table {
@@ -63,10 +50,6 @@
             overflow: hidden;
         }
 
-        table {
-         margin-bottom: 50px; /* Adds space between tables */
-        }
-
         th, td {
             padding: 12px;
             text-align: center;
@@ -74,190 +57,120 @@
         }
 
         th {
-            background-color: #447872; /* Green color for header */
+            background-color: #447872;
             color: white;
             font-weight: bold;
         }
 
-        /* Apply green color to the first and second rows in tbody */
-        tr:nth-child(1), tr:nth-child(1) {
-            background-color: #447872; /* Green color */
-            color: white; /* White text to contrast */
-        }
-
-        tr:nth-child(1) td:first-child {
-            background-color: #447872; /* Green color for the first column in the first row */
-        }
-
-        /* Disable hover effect completely for second row */
-        tr:nth-child(1) {
-            background-color: #447872 !important; /* Keep green color fixed for row 2 */
-        }
-
-        /* Hover effect for other rows except row 2 */
         tr:nth-child(n+2):hover {
             background-color: #e5e6e5;
             transition: 0.3s;
         }
 
-        /* First column styling */
         td:first-child {
             font-weight: bold;
             background-color: #e9ecef;
         }
 
         caption {
-            font-weight: bold;  /* Makes the text bold */
-            font-size: 1.2rem;   /* Changes the font size (you can adjust this value) */
-            text-align: center;  /* Centers the caption */
-            color: #333;         /* Changes the color of the caption */
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #333;
         }
 
     </style>
 </head>
 <body>
-    <!-- Header with logo and centered title -->
-    <header>
-        <img src="WTZ-Logo-512px.png" alt="Logo">
-        <div class="header-title">Status der Gaswarnanlagen</div>
-    </header>
 
-    <!-- Title of the page -->
-    <!-- <h2>Prüfstand 7 - Gaswarnanlage 1</h2> -->
+<header>
+    <img src="WTZ-Logo-512px.png" alt="Logo">
+    <div class="header-title">Status der Gaswarnanlagen</div>
+</header>
 
-    <table>
-        <caption>Prüfstand 7 - Gaswarnanlage 1</caption>
-        <thead>
-            <tr>
-                <th>Kanal</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Gasart</td>
-                <td>CH<sub>4</sub></td> <!-- CH4 as subscript -->
-                <td>CH<sub>4</sub></td> <!-- CH4 as subscript -->
-                <td>CH<sub>4</sub></td> <!-- CH4 as subscript -->
-                <td>O<sub>2</sub></td> <!-- O2 as subscript -->
-                <td>H<sub>2</sub></td> <!-- H2 as subscript -->
-                <td>H<sub>2</sub></td> <!-- H2 as subscript -->
-                <td>H<sub>2</sub></td> <!-- H2 as subscript -->
-                <td>H<sub>2</sub></td> <!-- H2 as subscript -->
-            </tr>
-            <tr><td>Messwert</td>        <td id="value1"> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Alarmstatus 1</td>      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Alarmstatus 2</td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Kanalstörung </td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Betriebsstatus</td>  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        </tbody>
-    </table>
+<table>
+    <caption>Prüfstand 7 - Gaswarnanlage 1</caption>
+    <thead>
+        <tr>
+            <th>Kanal</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Gasart</td>
+            <td>CH<sub>4</sub></td>
+            <td>CH<sub>4</sub></td>
+            <td>CH<sub>4</sub></td>
+            <td>O<sub>2</sub></td>
+            <td>H<sub>2</sub></td>
+            <td>H<sub>2</sub></td>
+            <td>H<sub>2</sub></td>
+            <td>H<sub>2</sub></td>
+        </tr>
+        <tr><td>Messwert</td><td id="value1"></td><td id="value2"></td><td id="value3"></td><td id="value4"></td><td id="value5"></td><td id="value6"></td><td id="value7"></td><td id="value8"></td></tr>
+        <tr><td>Alarmstatus 1</td><td id="alarm1_1"></td><td id="alarm1_2"></td><td id="alarm1_3"></td><td id="alarm1_4"></td><td id="alarm1_5"></td><td id="alarm1_6"></td><td id="alarm1_7"></td><td id="alarm1_8"></td></tr>
+        <tr><td>Alarmstatus 2</td><td id="alarm2_1"></td><td id="alarm2_2"></td><td id="alarm2_3"></td><td id="alarm2_4"></td><td id="alarm2_5"></td><td id="alarm2_6"></td><td id="alarm2_7"></td><td id="alarm2_8"></td></tr>
+        <tr><td>Kanalstörung</td><td id="error_1"></td><td id="error_2"></td><td id="error_3"></td><td id="error_4"></td><td id="error_5"></td><td id="error_6"></td><td id="error_7"></td><td id="error_8"></td></tr>
+        <tr><td>Betriebsstatus</td><td id="status1"></td><td id="status2"></td><td id="status3"></td><td id="status4"></td><td id="status5"></td><td id="status6"></td><td id="status7"></td><td id="status8"></td></tr>
+    </tbody>
+</table>
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 
-    <table>
-        <caption>Prüfstand 7 - Gaswarnanlage 2</caption>
-        <thead>
-            <tr>
-                <th>Kanal</th>
-                <th> 1</th>
-                <th> 2</th>
-                <th> 3</th>
-                <th> 4</th>
-                <th> 5</th>
-                <th> 6</th>
-                <th> 7</th>
-                <th> 8</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Gasart</td>
-                <td>CH<sub>4</sub></td>
-                <td>CH<sub>4</sub></td>
-                <td>CH<sub>4</sub></td>
-                <td>O<sub>2</sub></td>
-                <td>H<sub>2</sub></td>
-                <td>H<sub>2</sub></td>
-                <td>H<sub>2</sub></td>
-                <td>H<sub>2</sub></td>
-            </tr>
-            <tr><td>Messwert</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Alarmstatus 1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Alarmstatus 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Kanalstörung</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td>Betriebsstatus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        </tbody>
-    </table>
+<script type="module">
+    // Firebase configuration
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+    import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';
 
-    
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCygiSFB24M3pkyBA3d_zY_kKtQKxtvetE",
+        authDomain: "stand-7.firebaseapp.com",
+        databaseURL: "https://stand-7-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "stand-7",
+        storageBucket: "stand-7.firebasestorage.app",
+        messagingSenderId: "943950957452",
+        appId: "1:943950957452:web:87e3865fa6e62283be64a9"
+    };
 
-    <!-- Firebase Configuration and Logic -->
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCygiSFB24M3pkyBA3d_zY_kKtQKxtvetE",
-            authDomain: "stand-7.firebaseapp.com",
-            databaseURL: "https://stand-7-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "stand-7",
-            storageBucket: "stand-7.firebasestorage.app",
-            messagingSenderId: "943950957452",
-            appId: "1:943950957452:web:87e3865fa6e62283be64a9"
-        };
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const dataRef = ref(db, 'real_time_data');
 
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.database(app);
-
-        // Reference to the data in Firebase
-        const dataRef = db.ref("real_time_data");
-
-        // Function to fetch and display data
-        function fetchData() {
-            dataRef.once('value').then(function(snapshot) {
+    function fetchData() {
+        get(dataRef).then((snapshot) => {
+            if (snapshot.exists()) {
                 const data = snapshot.val();
-                if (data) {
-                    // Display values for the first table
-                    document.getElementById('value1').textContent = data.table1.value1;
-                    document.getElementById('value2').textContent = data.table1.value2;
-                    document.getElementById('value3').textContent = data.table1.value3;
-                    document.getElementById('value4').textContent = data.table1.value4;
-                    document.getElementById('value5').textContent = data.table1.value5;
-                    document.getElementById('value6').textContent = data.table1.value6;
-                    document.getElementById('value7').textContent = data.table1.value7;
-                    document.getElementById('value8').textContent = data.table1.value8;
+                document.getElementById('value1').textContent = data.table1.value1 || "";
+                document.getElementById('value2').textContent = data.table1.value2 || "";
+                document.getElementById('value3').textContent = data.table1.value3 || "";
+                document.getElementById('value4').textContent = data.table1.value4 || "";
+                document.getElementById('value5').textContent = data.table1.value5 || "";
+                document.getElementById('value6').textContent = data.table1.value6 || "";
+                document.getElementById('value7').textContent = data.table1.value7 || "";
+                document.getElementById('value8').textContent = data.table1.value8 || "";
 
-                    // Display Alarmstatus, Kanalstörung, Betriebsstatus etc., similarly
-                    document.getElementById('alarm1_1').textContent = data.table1.alarm1_1;
-                    document.getElementById('status1').textContent = data.table1.status1;
-                    // Continue this for other rows and table2 similarly...
-                }
-            });
-        }
+                // Add similar for alarmstatus, error, and status
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
 
-        // Call the fetch function
-        fetchData();
-
-        // Optionally, set an interval to refresh the data every 5 seconds
-        setInterval(fetchData, 5000); // Refresh data every 5 seconds
-    </script>
-    
-
-
-
-
-
-
-
-
+    fetchData();
+    setInterval(fetchData, 5000);
+</script>
 
 </body>
 </html>
