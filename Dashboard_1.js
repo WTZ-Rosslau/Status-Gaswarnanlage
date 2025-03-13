@@ -8,4 +8,4 @@ function updateCell() {
 }
 
 // Set an interval to update the cell every 5 seconds
-setInterval(updateCell, 5000);
+setInterval(updateCell, 1000);
