@@ -30,7 +30,7 @@ onValue(dataRef, (snapshot) => {
         const value = data.value;    // Access the 'value' field
 
         // Display the 'value' on your webpage (e.g., in a table cell with id 'valueDisplay')
-        document.getElementById("valueDisplay").innerText = `Value: ${value}`;
+        document.getElementById("valueDisplay").innerText = value;
     } else {
         console.log("No data found");
     }
