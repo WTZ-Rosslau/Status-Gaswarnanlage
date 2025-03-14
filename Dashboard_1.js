@@ -27,8 +27,13 @@ const dataRef = ref(database, 'Preufstand7');
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val(); 
     if (data) {
-        const keys = ["Messwert_AA", "Messwert_AB", "Messwert_AC", "Messwert_AD", 
-                      "Messwert_AE", "Messwert_AF", "Messwert_AG", "Messwert_AH"];
+        const keys = [
+    "Messwert_AA", "Messwert_AB", "Messwert_AC", "Messwert_AD", "Messwert_AE", "Messwert_AF", "Messwert_AG", "Messwert_AH",
+    "Alarmstatus1_AI", "Alarmstatus1_AJ", "Alarmstatus1_AK", "Alarmstatus1_AL", "Alarmstatus1_AM", "Alarmstatus1_AN", "Alarmstatus1_AO", "Alarmstatus1_AP",
+    "Alarmstatus2_AQ", "Alarmstatus2_AR", "Alarmstatus2_AS", "Alarmstatus2_AT", "Alarmstatus2_AU", "Alarmstatus2_AV", "Alarmstatus2_AW", "Alarmstatus2_AX",
+    "KanalStorung_BG", "KanalStorung_BH", "KanalStorung_BI", "KanalStorung_BJ", "KanalStorung_BK", "KanalStorung_BL", "KanalStorung_BM", "KanalStorung_BN",
+    "Betriebsstatus_BO", "Betriebsstatus_BP", "Betriebsstatus_BQ", "Betriebsstatus_BR", "Betriebsstatus_BS", "Betriebsstatus_BT", "Betriebsstatus_BU", "Betriebsstatus_BV"
+];
         
         keys.forEach(key => {
             if (data[key] !== undefined && document.getElementById(key)) {
