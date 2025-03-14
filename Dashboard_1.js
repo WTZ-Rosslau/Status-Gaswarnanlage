@@ -29,7 +29,8 @@ const keys = [
     "Alarmstatus1_AI", "Alarmstatus1_AJ", "Alarmstatus1_AK", "Alarmstatus1_AL", "Alarmstatus1_AM", "Alarmstatus1_AN", "Alarmstatus1_AO", "Alarmstatus1_AP",
     "Alarmstatus2_AQ", "Alarmstatus2_AR", "Alarmstatus2_AS", "Alarmstatus2_AT", "Alarmstatus2_AU", "Alarmstatus2_AV", "Alarmstatus2_AW", "Alarmstatus2_AX",
     "KanalStorung_BG", "KanalStorung_BH", "KanalStorung_BI", "KanalStorung_BJ", "KanalStorung_BK", "KanalStorung_BL", "KanalStorung_BM", "KanalStorung_BN",
-    "Betriebsstatus_BO", "Betriebsstatus_BP", "Betriebsstatus_BQ", "Betriebsstatus_BR", "Betriebsstatus_BS", "Betriebsstatus_BT", "Betriebsstatus_BU", "Betriebsstatus_BV"
+    "Betriebsstatus_BO", "Betriebsstatus_BP", "Betriebsstatus_BQ", "Betriebsstatus_BR", "Betriebsstatus_BS", "Betriebsstatus_BT", "Betriebsstatus_BU", "Betriebsstatus_BV",
+    "Alarmstatus3_AY", "Alarmstatus3_AZ", "Alarmstatus3_BA", "Alarmstatus3_BB", "Alarmstatus3_BC", "Alarmstatus3_BD", "Alarmstatus3_BE", "Alarmstatus3_BF"
 ];
 
 // Set up a real-time listener for changes
