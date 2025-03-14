@@ -24,13 +24,19 @@ const database = getDatabase(app);
 const dataRef = ref(database, 'Preufstand7');
 
 // Array of keys to update
-const keys = [
-    "Messwert_AA", "Messwert_AB", "Messwert_AC", "Messwert_AD", "Messwert_AE", "Messwert_AF", "Messwert_AG", "Messwert_AH",
-    "Alarmstatus1_AI", "Alarmstatus1_AJ", "Alarmstatus1_AK", "Alarmstatus1_AL", "Alarmstatus1_AM", "Alarmstatus1_AN", "Alarmstatus1_AO", "Alarmstatus1_AP",
-    "Alarmstatus2_AQ", "Alarmstatus2_AR", "Alarmstatus2_AS", "Alarmstatus2_AT", "Alarmstatus2_AU", "Alarmstatus2_AV", "Alarmstatus2_AW", "Alarmstatus2_AX",
-    "KanalStorung_BG", "KanalStorung_BH", "KanalStorung_BI", "KanalStorung_BJ", "KanalStorung_BK", "KanalStorung_BL", "KanalStorung_BM", "KanalStorung_BN",
-    "Betriebsstatus_BO", "Betriebsstatus_BP", "Betriebsstatus_BQ", "Betriebsstatus_BR", "Betriebsstatus_BS", "Betriebsstatus_BT", "Betriebsstatus_BU", "Betriebsstatus_BV",
-    "Alarmstatus3_AY", "Alarmstatus3_AZ", "Alarmstatus3_BA", "Alarmstatus3_BB", "Alarmstatus3_BC", "Alarmstatus3_BD", "Alarmstatus3_BE", "Alarmstatus3_BF"
+const new_keys = [
+    "Messwert_AA_1", "Messwert_AA_2", "Messwert_AB_1", "Messwert_AB_2", "Messwert_AC_1", "Messwert_AC_2", "Messwert_AD_1", "Messwert_AD_2",
+    "Messwert_AE_1", "Messwert_AE_2", "Messwert_AF_1", "Messwert_AF_2", "Messwert_AG_1", "Messwert_AG_2", "Messwert_AH_1", "Messwert_AH_2",
+    "Alarmstatus1_AI_1", "Alarmstatus1_AI_2", "Alarmstatus1_AJ_1", "Alarmstatus1_AJ_2", "Alarmstatus1_AK_1", "Alarmstatus1_AK_2", "Alarmstatus1_AL_1", "Alarmstatus1_AL_2",
+    "Alarmstatus1_AM_1", "Alarmstatus1_AM_2", "Alarmstatus1_AN_1", "Alarmstatus1_AN_2", "Alarmstatus1_AO_1", "Alarmstatus1_AO_2", "Alarmstatus1_AP_1", "Alarmstatus1_AP_2",
+    "Alarmstatus2_AQ_1", "Alarmstatus2_AQ_2", "Alarmstatus2_AR_1", "Alarmstatus2_AR_2", "Alarmstatus2_AS_1", "Alarmstatus2_AS_2", "Alarmstatus2_AT_1", "Alarmstatus2_AT_2",
+    "Alarmstatus2_AU_1", "Alarmstatus2_AU_2", "Alarmstatus2_AV_1", "Alarmstatus2_AV_2", "Alarmstatus2_AW_1", "Alarmstatus2_AW_2", "Alarmstatus2_AX_1", "Alarmstatus2_AX_2",
+    "KanalStorung_BG_1", "KanalStorung_BG_2", "KanalStorung_BH_1", "KanalStorung_BH_2", "KanalStorung_BI_1", "KanalStorung_BI_2", "KanalStorung_BJ_1", "KanalStorung_BJ_2",
+    "KanalStorung_BK_1", "KanalStorung_BK_2", "KanalStorung_BL_1", "KanalStorung_BL_2", "KanalStorung_BM_1", "KanalStorung_BM_2", "KanalStorung_BN_1", "KanalStorung_BN_2",
+    "Betriebsstatus_BO_1", "Betriebsstatus_BO_2", "Betriebsstatus_BP_1", "Betriebsstatus_BP_2", "Betriebsstatus_BQ_1", "Betriebsstatus_BQ_2", "Betriebsstatus_BR_1", "Betriebsstatus_BR_2",
+    "Betriebsstatus_BS_1", "Betriebsstatus_BS_2", "Betriebsstatus_BT_1", "Betriebsstatus_BT_2", "Betriebsstatus_BU_1", "Betriebsstatus_BU_2", "Betriebsstatus_BV_1", "Betriebsstatus_BV_2",
+    "Alarmstatus3_AY_1", "Alarmstatus3_AY_2", "Alarmstatus3_AZ_1", "Alarmstatus3_AZ_2", "Alarmstatus3_BA_1", "Alarmstatus3_BA_2", "Alarmstatus3_BB_1", "Alarmstatus3_BB_2",
+    "Alarmstatus3_BC_1", "Alarmstatus3_BC_2", "Alarmstatus3_BD_1", "Alarmstatus3_BD_2", "Alarmstatus3_BE_1", "Alarmstatus3_BE_2", "Alarmstatus3_BF_1", "Alarmstatus3_BF_2"
 ];
 
 
@@ -40,13 +46,19 @@ onValue(dataRef, (snapshot) => {
     console.log("Received data from Firebase:", data); // Debugging log
     
     if (data) {
-        const keys = [
-    "Messwert_AA", "Messwert_AB", "Messwert_AC", "Messwert_AD", "Messwert_AE", "Messwert_AF", "Messwert_AG", "Messwert_AH",
-    "Alarmstatus1_AI", "Alarmstatus1_AJ", "Alarmstatus1_AK", "Alarmstatus1_AL", "Alarmstatus1_AM", "Alarmstatus1_AN", "Alarmstatus1_AO", "Alarmstatus1_AP",
-    "Alarmstatus2_AQ", "Alarmstatus2_AR", "Alarmstatus2_AS", "Alarmstatus2_AT", "Alarmstatus2_AU", "Alarmstatus2_AV", "Alarmstatus2_AW", "Alarmstatus2_AX",
-    "KanalStorung_BG", "KanalStorung_BH", "KanalStorung_BI", "KanalStorung_BJ", "KanalStorung_BK", "KanalStorung_BL", "KanalStorung_BM", "KanalStorung_BN",
-    "Betriebsstatus_BO", "Betriebsstatus_BP", "Betriebsstatus_BQ", "Betriebsstatus_BR", "Betriebsstatus_BS", "Betriebsstatus_BT", "Betriebsstatus_BU", "Betriebsstatus_BV",
-    "Alarmstatus3_AY", "Alarmstatus3_AZ", "Alarmstatus3_BA", "Alarmstatus3_BB", "Alarmstatus3_BC", "Alarmstatus3_BD", "Alarmstatus3_BE", "Alarmstatus3_BF"
+        const new_keys = [
+    "Messwert_AA_1", "Messwert_AA_2", "Messwert_AB_1", "Messwert_AB_2", "Messwert_AC_1", "Messwert_AC_2", "Messwert_AD_1", "Messwert_AD_2",
+    "Messwert_AE_1", "Messwert_AE_2", "Messwert_AF_1", "Messwert_AF_2", "Messwert_AG_1", "Messwert_AG_2", "Messwert_AH_1", "Messwert_AH_2",
+    "Alarmstatus1_AI_1", "Alarmstatus1_AI_2", "Alarmstatus1_AJ_1", "Alarmstatus1_AJ_2", "Alarmstatus1_AK_1", "Alarmstatus1_AK_2", "Alarmstatus1_AL_1", "Alarmstatus1_AL_2",
+    "Alarmstatus1_AM_1", "Alarmstatus1_AM_2", "Alarmstatus1_AN_1", "Alarmstatus1_AN_2", "Alarmstatus1_AO_1", "Alarmstatus1_AO_2", "Alarmstatus1_AP_1", "Alarmstatus1_AP_2",
+    "Alarmstatus2_AQ_1", "Alarmstatus2_AQ_2", "Alarmstatus2_AR_1", "Alarmstatus2_AR_2", "Alarmstatus2_AS_1", "Alarmstatus2_AS_2", "Alarmstatus2_AT_1", "Alarmstatus2_AT_2",
+    "Alarmstatus2_AU_1", "Alarmstatus2_AU_2", "Alarmstatus2_AV_1", "Alarmstatus2_AV_2", "Alarmstatus2_AW_1", "Alarmstatus2_AW_2", "Alarmstatus2_AX_1", "Alarmstatus2_AX_2",
+    "KanalStorung_BG_1", "KanalStorung_BG_2", "KanalStorung_BH_1", "KanalStorung_BH_2", "KanalStorung_BI_1", "KanalStorung_BI_2", "KanalStorung_BJ_1", "KanalStorung_BJ_2",
+    "KanalStorung_BK_1", "KanalStorung_BK_2", "KanalStorung_BL_1", "KanalStorung_BL_2", "KanalStorung_BM_1", "KanalStorung_BM_2", "KanalStorung_BN_1", "KanalStorung_BN_2",
+    "Betriebsstatus_BO_1", "Betriebsstatus_BO_2", "Betriebsstatus_BP_1", "Betriebsstatus_BP_2", "Betriebsstatus_BQ_1", "Betriebsstatus_BQ_2", "Betriebsstatus_BR_1", "Betriebsstatus_BR_2",
+    "Betriebsstatus_BS_1", "Betriebsstatus_BS_2", "Betriebsstatus_BT_1", "Betriebsstatus_BT_2", "Betriebsstatus_BU_1", "Betriebsstatus_BU_2", "Betriebsstatus_BV_1", "Betriebsstatus_BV_2",
+    "Alarmstatus3_AY_1", "Alarmstatus3_AY_2", "Alarmstatus3_AZ_1", "Alarmstatus3_AZ_2", "Alarmstatus3_BA_1", "Alarmstatus3_BA_2", "Alarmstatus3_BB_1", "Alarmstatus3_BB_2",
+    "Alarmstatus3_BC_1", "Alarmstatus3_BC_2", "Alarmstatus3_BD_1", "Alarmstatus3_BD_2", "Alarmstatus3_BE_1", "Alarmstatus3_BE_2", "Alarmstatus3_BF_1", "Alarmstatus3_BF_2"
 ];
 
         keys.forEach(key => {
