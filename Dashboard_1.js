@@ -33,6 +33,7 @@ const keys = [
     "Alarmstatus3_AY", "Alarmstatus3_AZ", "Alarmstatus3_BA", "Alarmstatus3_BB", "Alarmstatus3_BC", "Alarmstatus3_BD", "Alarmstatus3_BE", "Alarmstatus3_BF"
 ];
 
+
 // Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
