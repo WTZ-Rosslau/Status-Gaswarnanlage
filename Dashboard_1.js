@@ -40,6 +40,9 @@ const new_keys = [
 ];
 
 // Set up a real-time listener for changes
+// Your Firebase configuration and other setup code remains the same
+
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
     console.log("Received data from Firebase:", data); // Debugging log
@@ -47,7 +50,22 @@ onValue(dataRef, (snapshot) => {
     if (data) {
         new_keys.forEach(key => {
             if (data[key] !== undefined && document.getElementById(key)) {
-                document.getElementById(key).innerText = data[key];
+                // Update the text of the table cell
+                const cell = document.getElementById(key);
+                cell.innerText = data[key];
+
+                // Example threshold value for changing the cell color
+                const threshold = 80;
+
+                // Check if the value exceeds the threshold and change the cell color
+                const value = parseFloat(data[key]); // Ensure the value is a number
+                if (value >= threshold) {
+                    // Add the red background color class if the value exceeds the threshold
+                    cell.classList.add('red-cell');
+                } else {
+                    // Remove the red background color if the value is below the threshold
+                    cell.classList.remove('red-cell');
+                }
             } else {
                 console.log(`Missing data or element for: ${key}`);
             }
@@ -56,3 +74,4 @@ onValue(dataRef, (snapshot) => {
         console.log("No data found");
     }
 });
+
