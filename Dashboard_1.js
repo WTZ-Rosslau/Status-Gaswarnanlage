@@ -25,27 +25,19 @@ const dataRef = ref(database, 'Preufstand7');
 
 // Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
-    const data = snapshot.val(); // Retrieve data from the snapshot
+    const data = snapshot.val(); 
     if (data) {
-    const O_Messwert_AA = data.Messwert_AA;
-    const O_Messwert_AB = data.Messwert_AB;
-    const O_Messwert_AC = data.Messwert_AC;
-    const O_Messwert_AD = data.Messwert_AD;
-    const O_Messwert_AE = data.Messwert_AE;
-    const O_Messwert_AF = data.Messwert_AF;
-    const O_Messwert_AG = data.Messwert_AG;
-    const O_Messwert_AH = data.Messwert_AH;
-
-    // Display only the values (no "Value:" text)
-    document.getElementById("Messwert_AA").innerText = O_Messwert_AA;
-    document.getElementById("Messwert_AB").innerText = O_Messwert_AB;
-    document.getElementById("Messwert_AC").innerText = O_Messwert_AC;
-    document.getElementById("Messwert_AD").innerText = O_Messwert_AD;
-    document.getElementById("Messwert_AE").innerText = O_Messwert_AE;
-    document.getElementById("Messwert_AF").innerText = O_Messwert_AF;
-    document.getElementById("Messwert_AG").innerText = O_Messwert_AG;
-    document.getElementById("Messwert_AH").innerText = O_Messwert_AH;
-} else {
-    console.log("No data found");
-}
+        const keys = ["Messwert_AA", "Messwert_AB", "Messwert_AC", "Messwert_AD", 
+                      "Messwert_AE", "Messwert_AF", "Messwert_AG", "Messwert_AH"];
+        
+        keys.forEach(key => {
+            if (data[key] !== undefined && document.getElementById(key)) {
+                document.getElementById(key).innerText = data[key];
+            } else {
+                console.log(`Missing data or element for: ${key}`);
+            }
+        });
+    } else {
+        console.log("No data found");
+    }
 });
