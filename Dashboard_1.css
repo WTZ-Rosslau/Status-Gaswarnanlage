@@ -72,6 +72,17 @@ th {
     font-size: x-small;
 }
 
+.gas {
+    display: block;
+    text-align: center; /* Center the text under the symbol */
+}
+
+.gas span {
+    display: block;
+    font-size: 1.2em; /* You can adjust the size of the chemical formula */
+}
+
+
 .red-cell {
     background-color: #fbbabb;
 }
