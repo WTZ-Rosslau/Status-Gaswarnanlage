@@ -122,6 +122,7 @@ caption {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 50px;
     /* Removed the fixed table layout to allow columns to adjust based on content */
 }
 
