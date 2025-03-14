@@ -1,4 +1,3 @@
-/* General body styling */
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #f8f9fa;
@@ -6,7 +5,6 @@ body {
     padding: 0;
 }
 
-/* Header styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -31,7 +29,12 @@ header img {
     flex-grow: 1;
 }
 
-/* Table Styling */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
 table {
     width: 90%;
     max-width: 800px;
@@ -41,31 +44,14 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 50px;  /* Ensure the table has margin at the bottom */
-}
-
-table {
     margin-bottom: 50px;
 }
 
-/* Specific styles for #YG1 */
-#YG1 {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 50px !important;  /* Ensure it is applied */
-}
-
-/* Table header styles */
 th, td {
     padding: 12px;
     text-align: center;
     border: 1px solid #ddd;
+    width: 10%; /* Set fixed width for columns */
 }
 
 th {
@@ -84,32 +70,29 @@ th {
     font-size: x-small;
 }
 
-/* Gas styling */
-.gas {
-    display: block;
-    text-align: center; /* Center the text under the symbol */
+.red-cell {
+    background-color: #fbbabb;
 }
 
-.gas span {
-    display: block;
-    font-size: 1.2em; /* Adjust size of chemical formula */
-    font-weight: bold;
-    color: gold;  /* Set the color and font weight of gas */
+tr:nth-child(1) {
+    background-color: #447872;
+    color: white;
 }
 
-/* Table row hover effect */
+tr:nth-child(1) td:first-child {
+    background-color: #447872;
+}
+
 tr:nth-child(n+2):hover {
     background-color: #e5e6e5;
     transition: 0.3s;
 }
 
-/* First column specific styling */
 td:first-child {
     font-weight: bold;
     background-color: #e9ecef;
 }
 
-/* Caption styling */
 caption {
     font-weight: bold;
     font-size: 1.2rem;
@@ -117,19 +100,10 @@ caption {
     color: #333;
 }
 
-/* Other general table styles */
-#YG1 th, #YG1 td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-/* First column */
-#YG1 th:first-child, #YG1 td:first-child {
-    width: auto;
-}
-
-/* Other columns */
-#YG1 th:not(:first-child), #YG1 td:not(:first-child) {
-    width: auto;
+/* Prevent breaking of the gas symbol and subscript onto a new line */
+td sub {
+    display: inline; /* Ensures that the subscript stays inline */
+    font-size: 0.6em; /* Make the subscript even smaller (adjust as needed) */
+    vertical-align: bottom; /* Aligns the subscript with the base text */
+    margin-left: 1px; /* Small space between the main symbol and subscript */
 }
