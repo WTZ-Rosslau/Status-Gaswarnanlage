@@ -21,16 +21,16 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 // Reference to the 'real_time_data' node in Firebase
-const dataRef = ref(database, 'real_time_data');
+const dataRef = ref(database, 'Preufstand7');
 
 // Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val(); // Retrieve data from the snapshot
     if (data) {
-        const value = data.value;    // Access the 'value' field
+        const value = data.Messwert_AA;    // Access the 'value' field
 
         // Display only the value (no "Value:" text)
-        document.getElementById("valueDisplay").innerText = value;
+        document.getElementById("Messwert_AA").innerText = value;
     } else {
         console.log("No data found");
     }
