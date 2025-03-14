@@ -61,6 +61,13 @@ th {
     color: white;
     font-weight: bold;
 }
+.highlighted {
+        font-size: 1.1em;
+        color: gold;
+    }
+    .small-grey {
+        color: grey;
+    }
 
 .red-cell {
     background-color: #fbbabb;
