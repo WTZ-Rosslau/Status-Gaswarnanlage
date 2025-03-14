@@ -62,6 +62,11 @@ th {
     font-weight: bold;
 }
 
+.red-cell {
+    background-color: #fbbabb;
+     
+}
+
 tr:nth-child(1) {
     background-color: #447872;
     color: white;
