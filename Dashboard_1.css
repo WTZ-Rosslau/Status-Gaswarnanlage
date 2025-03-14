@@ -100,3 +100,35 @@ caption {
     text-align: center;
     color: #333;
 }
+
+
+
+#YG1 {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed; /* Ensures all columns after the first one are evenly spaced */
+}
+
+#YG1 th, #YG1 td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#YG1 th:first-child, #YG1 td:first-child {
+    width: auto; /* First column can adjust based on content */
+}
+
+#YG1 th:not(:first-child), #YG1 td:not(:first-child) {
+    width: 1%; /* Ensures other columns are the same width */
+}
+
+
+
+
