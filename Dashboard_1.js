@@ -43,6 +43,7 @@ const new_keys = [
 // Your Firebase configuration and other setup code remains the same
 
 // Set up a real-time listener for changes
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
     console.log("Received data from Firebase:", data); // Debugging log
@@ -54,17 +55,23 @@ onValue(dataRef, (snapshot) => {
                 const cell = document.getElementById(key);
                 cell.innerText = data[key];
 
-                // Example threshold value for changing the cell color
-                const threshold = 80;
+                // Only apply color change to Alarmstatus1, Alarmstatus2, Alarmstatus3, and KanalStorung
+                if (key.includes("Alarmstatus") || key.includes("KanalStorung")) {
+                    // Example threshold value for changing the cell color
+                    const threshold = 80;
 
-                // Check if the value exceeds the threshold and change the cell color
-                const value = parseFloat(data[key]); // Ensure the value is a number
-                if (value >= threshold) {
-                    // Add the red background color class if the value exceeds the threshold
-                    cell.classList.add('red-cell');
-                } else {
-                    // Remove the red background color if the value is below the threshold
-                    cell.classList.remove('red-cell');
+                    // Ensure the value is a number before comparison
+                    const value = parseFloat(data[key]);
+
+                    if (!isNaN(value)) {
+                        if (value >= threshold) {
+                            // Add the red background color class if the value exceeds the threshold
+                            cell.classList.add('red-cell');
+                        } else {
+                            // Remove the red background color if the value is below the threshold
+                            cell.classList.remove('red-cell');
+                        }
+                    }
                 }
             } else {
                 console.log(`Missing data or element for: ${key}`);
@@ -74,4 +81,5 @@ onValue(dataRef, (snapshot) => {
         console.log("No data found");
     }
 });
+
 
