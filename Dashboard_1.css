@@ -70,6 +70,12 @@ th {
     display: block;
 }
 
+ .active {
+            color: green;
+        }
+        .inactive {
+            color: red;
+        }
 .red-cell {
     background-color: #fbbabb;
 }
