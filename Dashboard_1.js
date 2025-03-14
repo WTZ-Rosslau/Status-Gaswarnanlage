@@ -26,18 +26,11 @@ const dataRef = ref(database, 'Preufstand7');
 // Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val(); // Retrieve data from the snapshot
-    console.log("Data received from Firebase:", data); // Log the received data
     if (data) {
         const value = data.Messwert_AA;    // Access the 'value' field
-        console.log("Messwert_AA value:", value); // Log the value
 
         // Display only the value (no "Value:" text)
-        const element = document.getElementById("Messwert_AA");
-        if (element) {
-            element.innerText = value;
-        } else {
-            console.log("Element with id 'Messwert_AA' not found");
-        }
+        document.getElementById("Messwert_AA").innerText = value;
     } else {
         console.log("No data found");
     }
