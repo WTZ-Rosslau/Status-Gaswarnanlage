@@ -68,6 +68,7 @@ th {
 .small-white {
     color: white;
     font-size: x-small;
+    display: block;
 }
 
 .red-cell {
