@@ -17,6 +17,13 @@ header {
     margin-bottom: 50px;
 }
 
+@media (max-width: 600px) {
+    header {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        max-width: 100%; /* Ensure the header takes the full width */
+    }
+}
+
 header img {
     width: 100px;
     height: auto;
