@@ -9,21 +9,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px;
+    padding: 10px 150px;
     background-color: #f1f1f1;
     color: rgb(110, 106, 102);
-    max-width: 1000px;
+    max-width: 500px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
-
-@media (max-width: 600px) {
-    header {
-        padding: 10px 20px; /* Adjust padding for smaller screens */
-        max-width: 100%; /* Ensure the header takes the full width */
-    }
-}
-
 header img {
     width: 100px;
     height: auto;
