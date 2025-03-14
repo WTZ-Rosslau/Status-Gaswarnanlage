@@ -40,49 +40,57 @@
         ];
 
         // Set up a real-time listener for changes
-        onValue(dataRef, (snapshot) => {
-            const data = snapshot.val();
-            console.log("Received data from Firebase:", data); // Debugging log
+       // Set up a real-time listener for changes
+onValue(dataRef, (snapshot) => {
+    const data = snapshot.val();
+    console.log("Received data from Firebase:", data); // Debugging log
+    
+    if (data) {
+        new_keys.forEach(key => {
+            const cell = document.getElementById(key);
             
-            const statusElement = document.getElementById('status');
-            
-            if (data) {
-                statusElement.innerText = "Datenempfang aktiv";
-                statusElement.classList.remove('inactive');
-                statusElement.classList.add('active');
-                
-                new_keys.forEach(key => {
-                    if (data[key] !== undefined && document.getElementById(key)) {
-                        // Update the text of the table cell
-                        const cell = document.getElementById(key);
-                        cell.innerText = data[key];
+            // Check if data exists for this key and the corresponding element exists
+            if (data[key] !== undefined && cell) {
+                // Update the text of the table cell with the received data
+                cell.innerText = data[key];
 
-                        // Only apply color change to Alarmstatus1, Alarmstatus2, Alarmstatus3, and KanalStorung
-                        if (key.includes("Alarmstatus") || key.includes("KanalStorung")) {
-                            // Example threshold value for changing the cell color
-                            const threshold = 80;
+                // Check if the key is related to Alarmstatus or KanalStorung for conditional styling
+                if (key.includes("Alarmstatus") || key.includes("KanalStorung")) {
+                    // Example threshold value for changing the cell color
+                    const threshold = 80;
+                    const value = parseFloat(data[key]);
 
-                            // Ensure the value is a number before comparison
-                            const value = parseFloat(data[key]);
-
-                            if (!isNaN(value)) {
-                                if (value >= threshold) {
-                                    // Add the red background color class if the value exceeds the threshold
-                                    cell.classList.add('red-cell');
-                                } else {
-                                    // Remove the red background color if the value is below the threshold
-                                    cell.classList.remove('red-cell');
-                                }
-                            }
+                    if (!isNaN(value)) {
+                        if (value >= threshold) {
+                            // Add the red background color class if the value exceeds the threshold
+                            cell.classList.add('red-cell');
+                        } else {
+                            // Remove the red background color if the value is below the threshold
+                            cell.classList.remove('red-cell');
                         }
-                    } else {
-                        console.log(`Missing data or element for: ${key}`);
                     }
-                });
+                }
+
+                // Check if data is coming correctly or inactive
+                if (data[key] === null || data[key] === undefined || data[key] === "") {
+                    // If data is missing, mark as inactive
+                    cell.innerText = "Inactive";
+                    cell.classList.add('inactive-cell');
+                } else {
+                    // Clear inactive styles if the data is valid
+                    cell.classList.remove('inactive-cell');
+                }
             } else {
-                statusElement.innerText = "Datenempfang nicht aktiv";
-                statusElement.classList.remove('active');
-                statusElement.classList.add('inactive');
-                console.log("No data found");
+                console.log(`Missing data or element for: ${key}`);
+                // Set "Inactive" if element is missing or data is not found
+                if (cell) {
+                    cell.innerText = "Inactive";
+                    cell.classList.add('inactive-cell');
+                }
             }
         });
+    } else {
+        console.log("No data found");
+    }
+});
+
