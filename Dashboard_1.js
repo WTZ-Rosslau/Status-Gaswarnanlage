@@ -51,24 +51,7 @@ onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
    // console.log("Received data from Firebase:", data);  Debugging log
 
-    if (data && data.timestamp) {
-        const currentTime = Date.now();
-        const timeDifference = currentTime - data.timestamp;
 
-        console.log('Current Time:', currentTime);
-        console.log('Data Timestamp:', data.timestamp);
-        console.log('Time Difference:', timeDifference);
-
-        // Check if the data was updated within the last 30 seconds
-        if (timeDifference <= 30000) {
-            statusCell.innerText = "aktiv";
-        } else {
-            statusCell.innerText = "nicht aktiv";
-        }
-    } else {
-        statusCell.innerText = "nicht aktiv";
-    }
-});
 
     
     if (data) {
