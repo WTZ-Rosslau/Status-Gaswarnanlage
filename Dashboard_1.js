@@ -92,7 +92,7 @@ onValue(dataRef, (snapshot) => {
             console.log(`Timestamp: ${timeStamp}`);
             console.log(`Time Difference: ${timeDifference} seconds`);
 
-            const statusCell = document.getElementById('status'); // Assuming 'status' is the ID of the cell to update
+            const statusCell = document.getElementById('status-cell'); // Assuming 'status' is the ID of the cell to update
 
             if (statusCell) {
                 if (timeDifference > 30) {
