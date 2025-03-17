@@ -40,54 +40,39 @@ const new_keys = [
 ];
 
 // Set up a real-time listener for changes
-// Your Firebase configuration and other setup code remains the same
-
-
 
 
 
 
 
 // Set up a real-time listener for changes
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
-    const statusCell = document.getElementById('status-cell');
-
-    if (data && data.timestamp) {
-        const currentTime = Date.now(); // Get the current time in milliseconds
-        const timeDifference = currentTime - data.timestamp; // Difference in milliseconds
-
-        console.log('Current Time:', currentTime);
-        console.log('Data Timestamp:', data.timestamp);
-        console.log('Time Difference:', timeDifference);
-
-        // Check if the data was updated within the last 10 seconds
-        if (timeDifference <= 10000) {
-            statusCell.innerText = "aktiv"; // Active within the last 10 seconds
-        } else {
-            statusCell.innerText = "nicht aktiv"; // Not active
-        }
-    } else {
-        statusCell.innerText = "nicht aktiv"; // No data or no timestamp
-    }
-
-    // Update the table cells for the keys
+   // console.log("Received data from Firebase:", data);  Debugging log
+    
     if (data) {
         new_keys.forEach(key => {
             if (data[key] !== undefined && document.getElementById(key)) {
+                // Update the text of the table cell
                 const cell = document.getElementById(key);
                 cell.innerText = data[key];
 
-                // Apply color change to Alarmstatus and KanalStorung keys
+                // Only apply color change to Alarmstatus1, Alarmstatus2, Alarmstatus3, and KanalStorung
                 if (key.includes("Alarmstatus") || key.includes("KanalStorung")) {
+                    // Example threshold value for changing the cell color
                     const threshold = 80;
+
+                    // Ensure the value is a number before comparison
                     const value = parseFloat(data[key]);
 
                     if (!isNaN(value)) {
                         if (value >= threshold) {
-                            cell.classList.add('red-cell'); // Add red background
+                            // Add the red background color class if the value exceeds the threshold
+                            cell.classList.add('red-cell');
                         } else {
-                            cell.classList.remove('red-cell'); // Remove red background
+                            // Remove the red background color if the value is below the threshold
+                            cell.classList.remove('red-cell');
                         }
                     }
                 }
@@ -99,8 +84,3 @@ onValue(dataRef, (snapshot) => {
         console.log("No data found");
     }
 });
-    } else {
-        console.log("No data found");
-    }
-});
-
