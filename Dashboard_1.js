@@ -39,16 +39,39 @@ const new_keys = [
     "Alarmstatus3_BC_1", "Alarmstatus3_BC_2", "Alarmstatus3_BD_1", "Alarmstatus3_BD_2", "Alarmstatus3_BE_1", "Alarmstatus3_BE_2", "Alarmstatus3_BF_1", "Alarmstatus3_BF_2"
 ];
 
-// Set up a real-time listener for changes
+// Function to update the status cell based on timestamp difference
+function updateStatusCell(data) {
+    const currentTime = Date.now(); // Get current time in milliseconds
 
+    if (data.TimeStamp !== undefined) {
+        const timeStamp = parseFloat(data.TimeStamp) * 1000; // Convert timestamp to milliseconds
+        const timeDifference = (currentTime - timeStamp) / 1000; // Difference in seconds
 
+        console.log(`Current Time: ${currentTime}`);
+        console.log(`Timestamp: ${timeStamp}`);
+        console.log(`Time Difference: ${timeDifference} seconds`);
 
+        const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
 
+        if (statusCell) {
+            if (timeDifference > 3) {
+                statusCell.innerText = 'inaktiv';
+                console.log("Status updated to inaktiv");
+            } else {
+                statusCell.innerText = 'aktiv';
+                console.log("Status updated to aktiv");
+            }
+        } else {
+            console.log("Missing status cell element");
+        }
+    } else {
+        console.log("No timestamp found");
+    }
+}
 
-// Set up a real-time listener for changes
+// Listen for changes in the dataRef
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
-    const currentTime = Date.now(); // Get current time in milliseconds
 
     if (data) {
         new_keys.forEach(key => {
@@ -80,30 +103,19 @@ onValue(dataRef, (snapshot) => {
             }
         });
 
-        // Check the timestamp and update the cell status
-        if (data.TimeStamp !== undefined) {
-            const timeStamp = parseFloat(data.TimeStamp) * 1000; // Convert timestamp to milliseconds
-            const timeDifference = (currentTime - timeStamp) / 1000; // Difference in seconds
-
-            console.log(`Current Time: ${currentTime}`);
-            console.log(`Timestamp: ${timeStamp}`);
-            console.log(`Time Difference: ${timeDifference} seconds`);
-
-            const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
-
-            if (statusCell) {
-                if (timeDifference > 3) {
-                    statusCell.innerText = 'inaktiv';
-                } else {
-                    statusCell.innerText = 'aktiv';
-                }
-            } else {
-                console.log("Missing status cell element");
-            }
-        } else {
-            console.log("No timestamp found");
-        }
+        // Update the status cell based on timestamp difference
+        updateStatusCell(data);
     } else {
         console.log("No data found");
     }
 });
+
+// Periodically check the timestamp and update the status cell
+setInterval(() => {
+    onValue(dataRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+            updateStatusCell(data);
+        }
+    });
+}, 1000); // Check every second
