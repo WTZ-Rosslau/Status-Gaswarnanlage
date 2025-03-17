@@ -46,8 +46,16 @@ onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
     const statusCell = document.getElementById('status-cell');
 
-    if (data && Object.keys(data).length > 0) {
-        statusCell.innerText = "aktiv";
+    if (data && data.timestamp) {
+        const currentTime = Date.now();
+        const timeDifference = currentTime - data.timestamp;
+
+        // Check if the data was updated within the last 10 seconds
+        if (timeDifference <= 10000) {
+            statusCell.innerText = "aktiv";
+        } else {
+            statusCell.innerText = "nicht aktiv";
+        }
     } else {
         statusCell.innerText = "nicht aktiv";
     }
