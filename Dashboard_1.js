@@ -40,7 +40,7 @@ const new_keys = [
 ];
 
 // Function to update the status cell based on timestamp difference
-updateStatusCell(data) {
+function updateStatusCell(data) {
     const currentTime = Date.now(); // Get current time in milliseconds
 
     if (data.TimeStamp !== undefined) {
@@ -52,27 +52,23 @@ updateStatusCell(data) {
         console.log(`Time Difference: ${timeDifference} seconds`);
 
         const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
-        const lightCell = document.getElementById('light-cell'); // Assuming 'light-cell' is the ID of the light indicator cell
 
-        if (statusCell && lightCell) {
-            if (timeDifference > 5) {
+        if (statusCell) {
+            if (timeDifference > 3) {
                 statusCell.innerText = 'inaktiv';
-                lightCell.classList.remove('green-light');
-                lightCell.classList.add('red-light');
                 console.log("Status updated to inaktiv");
             } else {
                 statusCell.innerText = 'aktiv';
-                lightCell.classList.remove('red-light');
-                lightCell.classList.add('green-light');
                 console.log("Status updated to aktiv");
             }
         } else {
-            console.log("Missing status cell or light cell element");
+            console.log("Missing status cell element");
         }
     } else {
         console.log("No timestamp found");
     }
 }
+
 // Listen for changes in the dataRef
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
