@@ -54,6 +54,9 @@ function updateStatusCell(data) {
         const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
         const lightCell = document.querySelector('.light-cell'); // Use querySelector to select the element by class
 
+        console.log(`Status Cell: ${statusCell}`);
+        console.log(`Light Cell: ${lightCell}`);
+
         if (statusCell && lightCell) {
             if (timeDifference > 3) {
                 statusCell.innerText = 'inaktiv';
