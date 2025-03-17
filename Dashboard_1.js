@@ -52,7 +52,7 @@ function updateStatusCell(data) {
         console.log(`Time Difference: ${timeDifference} seconds`);
 
         const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
-        const lightCell = document.getElementById('light-cell'); // Assuming 'light-cell' is the ID of the light indicator cell
+        const lightCell = document.querySelector('.light-cell'); // Use querySelector to select the element by class
 
         if (statusCell && lightCell) {
             if (timeDifference > 3) {
