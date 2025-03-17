@@ -73,7 +73,7 @@ onValue(dataRef, (snapshot) => {
 // Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
-    console.log("Received data from Firebase:", data); // Debugging log
+   // console.log("Received data from Firebase:", data);  Debugging log
     
     if (data) {
         new_keys.forEach(key => {
