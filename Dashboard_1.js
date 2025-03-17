@@ -42,7 +42,19 @@ const new_keys = [
 // Set up a real-time listener for changes
 // Your Firebase configuration and other setup code remains the same
 
+
+
+
+
+
+
+// Set up a real-time listener for changes
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
+    const data = snapshot.val();
+   // console.log("Received data from Firebase:", data);  Debugging log
+
+    onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
     const statusCell = document.getElementById('status-cell');
 
@@ -64,16 +76,6 @@ onValue(dataRef, (snapshot) => {
         statusCell.innerText = "nicht aktiv";
     }
 });
-
-
-
-
-
-// Set up a real-time listener for changes
-// Set up a real-time listener for changes
-onValue(dataRef, (snapshot) => {
-    const data = snapshot.val();
-   // console.log("Received data from Firebase:", data);  Debugging log
     
     if (data) {
         new_keys.forEach(key => {
