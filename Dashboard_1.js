@@ -95,7 +95,7 @@ onValue(dataRef, (snapshot) => {
             const statusCell = document.getElementById('status-cell'); // Assuming 'status' is the ID of the cell to update
 
             if (statusCell) {
-                if (timeDifference > 30) {
+                if (timeDifference > 5) {
                     statusCell.innerText = 'inaktiv';
                 } else {
                     statusCell.innerText = 'aktiv';
