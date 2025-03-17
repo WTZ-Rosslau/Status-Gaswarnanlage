@@ -48,6 +48,7 @@ const new_keys = [
 // Set up a real-time listener for changes
 // Set up a real-time listener for changes
 // Set up a real-time listener for changes
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
     const currentTime = Date.now(); // Get current time in milliseconds
@@ -84,10 +85,14 @@ onValue(dataRef, (snapshot) => {
 
         // Check the timestamp and update the cell status
         if (data.TimeStamp !== undefined) {
-            const timeStamp = new Date(data.TimeStamp).getTime(); // Convert timestamp to milliseconds
+            const timeStamp = parseFloat(data.TimeStamp) * 1000; // Convert timestamp to milliseconds
             const timeDifference = (currentTime - timeStamp) / 1000; // Difference in seconds
 
-            const statusCell = document.getElementById('status-cell'); // Assuming 'status' is the ID of the cell to update
+            console.log(`Current Time: ${currentTime}`);
+            console.log(`Timestamp: ${timeStamp}`);
+            console.log(`Time Difference: ${timeDifference} seconds`);
+
+            const statusCell = document.getElementById('status'); // Assuming 'status' is the ID of the cell to update
 
             if (statusCell) {
                 if (timeDifference > 30) {
