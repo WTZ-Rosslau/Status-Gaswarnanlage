@@ -47,13 +47,11 @@ const new_keys = [
 
 // Set up a real-time listener for changes
 // Set up a real-time listener for changes
+// Set up a real-time listener for changes
 onValue(dataRef, (snapshot) => {
     const data = snapshot.val();
-   // console.log("Received data from Firebase:", data);  Debugging log
+    const currentTime = Date.now(); // Get current time in milliseconds
 
-
-
-    
     if (data) {
         new_keys.forEach(key => {
             if (data[key] !== undefined && document.getElementById(key)) {
@@ -83,6 +81,26 @@ onValue(dataRef, (snapshot) => {
                 console.log(`Missing data or element for: ${key}`);
             }
         });
+
+        // Check the timestamp and update the cell status
+        if (data.TimeStamp !== undefined) {
+            const timeStamp = new Date(data.TimeStamp).getTime(); // Convert timestamp to milliseconds
+            const timeDifference = (currentTime - timeStamp) / 1000; // Difference in seconds
+
+            const statusCell = document.getElementById('status-cell'); // Assuming 'status' is the ID of the cell to update
+
+            if (statusCell) {
+                if (timeDifference > 30) {
+                    statusCell.innerText = 'inaktiv';
+                } else {
+                    statusCell.innerText = 'aktiv';
+                }
+            } else {
+                console.log("Missing status cell element");
+            }
+        } else {
+            console.log("No timestamp found");
+        }
     } else {
         console.log("No data found");
     }
