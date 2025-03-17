@@ -28,6 +28,21 @@ header img {
     flex-grow: 1;
 }
 
+#status-table td {
+    color: black;             /* Ensures that the text inside <td> is black */
+}
+
+/* Specific styles for the first row in #status-table */
+#status-table tr:nth-child(1) {
+    background-color: #ffffff; /* Keeps the first row's background as #447872 */
+    color: white;              /* Makes text in the first row white */
+}
+
+/* Specific styles for the first cell in the first row */
+#status-table tr:nth-child(1) td:first-child {
+    background-color: #ffffff; /* Keeps the first column's background as #447872 */
+}
+
 h2 {
     color: #333;
     text-align: center;
