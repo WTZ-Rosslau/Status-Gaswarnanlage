@@ -67,7 +67,7 @@ onValue(dataRef, (snapshot) => {
         console.log('Time Difference:', timeDifference);
 
         // Check if the data was updated within the last 30 seconds
-        if (timeDifference <= 30000) {
+        if (timeDifference <= 10000) {
             statusCell.innerText = "aktiv";
         } else {
             statusCell.innerText = "nicht aktiv";
