@@ -43,15 +43,15 @@ const new_keys = [
 // Your Firebase configuration and other setup code remains the same
 
 onValue(dataRef, (snapshot) => {
-            const data = snapshot.val();
-            const statusCell = document.getElementById('status-cell');
+    const data = snapshot.val();
+    const statusCell = document.getElementById('status-cell');
 
-            if (data) {
-                statusCell.innerText = "aktiv";
-            } else {
-                statusCell.innerText = "nicht aktiv";
-            }
-        });
+    if (data && Object.keys(data).length > 0) {
+        statusCell.innerText = "aktiv";
+    } else {
+        statusCell.innerText = "nicht aktiv";
+    }
+});
 
 
 
