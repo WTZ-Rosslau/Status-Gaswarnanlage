@@ -54,7 +54,7 @@ function updateStatusCell(data) {
         const statusCell = document.getElementById('status-cell'); // Assuming 'status-cell' is the ID of the cell to update
 
         if (statusCell) {
-            if (timeDifference > 3) {
+            if (timeDifference > 5) {
                 statusCell.innerText = 'inaktiv';
                 console.log("Status updated to inaktiv");
             } else {
