@@ -88,6 +88,20 @@ tr:nth-child(1) {
 tr:nth-child(1) td:first-child {
     background-color: #447872;
 }
+.light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green-light {
+    background-color: green;
+}
+
+.red-light {
+    background-color: red;
+}
 
 tr:nth-child(n+2):hover {
     background-color: #e5e6e5;
