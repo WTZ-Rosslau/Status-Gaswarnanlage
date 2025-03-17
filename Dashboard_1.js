@@ -50,8 +50,8 @@ onValue(dataRef, (snapshot) => {
         const currentTime = Date.now();
         const timeDifference = currentTime - data.timestamp;
 
-        // Check if the data was updated within the last 10 seconds
-        if (timeDifference <= 10000) {
+        // Check if the data was updated within the last 30 seconds
+        if (timeDifference <= 30000) {
             statusCell.innerText = "aktiv";
         } else {
             statusCell.innerText = "nicht aktiv";
