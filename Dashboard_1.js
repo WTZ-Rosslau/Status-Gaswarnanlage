@@ -55,7 +55,7 @@ function updateStatusCell(data) {
         const lightCell = document.getElementById('light-cell'); // Assuming 'light-cell' is the ID of the light indicator cell
 
         if (statusCell && lightCell) {
-            if (timeDifference > 3) {
+            if (timeDifference > 6) {
                 statusCell.innerText = 'inaktiv';
                 lightCell.classList.remove('green-light');
                 lightCell.classList.add('red-light');
