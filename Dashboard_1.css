@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+
 header {
     display: flex;
     justify-content: space-between;
@@ -141,4 +142,34 @@ td sub {
     font-size: 0.6em; /* Make the subscript even smaller (adjust as needed) */
     vertical-align: bottom; /* Aligns the subscript with the base text */
     margin-left: 1px; /* Small space between the main symbol and subscript */
+}
+
+
+
+
+
+
+
+
+
+#clock {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#date {
+    font-size: 14px;
+    margin-top: 10px;
+    margin: 0 10px; /* Add space between the time and date */
+}
+
+
+/* Styling for the clock and date */
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px; /* Small text size */
+    margin-bottom: 50px;
 }
