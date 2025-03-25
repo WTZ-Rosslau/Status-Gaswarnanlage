@@ -25,7 +25,7 @@ const dataRef = ref(database, 'Preufstand7');
 
 // Array of keys to update
 const new_keys = [
-   "Zeit_Datum_A_1" ,"Messwert_AA_1", "Messwert_AA_2", "Messwert_AB_1", "Messwert_AB_2", "Messwert_AC_1", "Messwert_AC_2", "Messwert_AD_1", "Messwert_AD_2",
+   "Zeit_Datum_A_2" ,"Zeit_Datum_A_1" ,"Messwert_AA_1", "Messwert_AA_2", "Messwert_AB_1", "Messwert_AB_2", "Messwert_AC_1", "Messwert_AC_2", "Messwert_AD_1", "Messwert_AD_2",
     "Messwert_AE_1", "Messwert_AE_2", "Messwert_AF_1", "Messwert_AF_2", "Messwert_AG_1", "Messwert_AG_2", "Messwert_AH_1", "Messwert_AH_2",
     "Alarmstatus1_AI_1", "Alarmstatus1_AI_2", "Alarmstatus1_AJ_1", "Alarmstatus1_AJ_2", "Alarmstatus1_AK_1", "Alarmstatus1_AK_2", "Alarmstatus1_AL_1", "Alarmstatus1_AL_2",
     "Alarmstatus1_AM_1", "Alarmstatus1_AM_2", "Alarmstatus1_AN_1", "Alarmstatus1_AN_2", "Alarmstatus1_AO_1", "Alarmstatus1_AO_2", "Alarmstatus1_AP_1", "Alarmstatus1_AP_2",
