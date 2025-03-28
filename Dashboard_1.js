@@ -88,7 +88,7 @@ onValue(dataRef, (snapshot) => {
                 // Only apply color change to Alarmstatus1, Alarmstatus2, Alarmstatus3, and KanalStorung
                 if (key.includes("Alarmstatus") || key.includes("KanalStorung")) {
                     // Example threshold value for changing the cell color
-                    const threshold = 80;
+                    const threshold = 1;
 
                     // Ensure the value is a number before comparison
                     const value = parseFloat(data[key]);
