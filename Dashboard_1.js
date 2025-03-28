@@ -4,14 +4,14 @@ import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.
 
 // Your Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCygiSFB24M3pkyBA3d_zY_kKtQKxtvetE",
-    authDomain: "stand-7.firebaseapp.com",
-    databaseURL: "https://stand-7-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "stand-7",
-    storageBucket: "stand-7.firebasestorage.app",
-    messagingSenderId: "943950957452",
-    appId: "1:943950957452:web:87e3865fa6e62283be64a9",
-    measurementId: "G-M2DPSGFEKY"
+  apiKey: "AIzaSyBK5uMJd0MTQ3h2U9q_ruJaiGx7oRpZ-Mw",
+  authDomain: "gaswarnanlagen.firebaseapp.com",
+  databaseURL: "https://gaswarnanlagen-default-rtdb.firebaseio.com",
+  projectId: "gaswarnanlagen",
+  storageBucket: "gaswarnanlagen.firebasestorage.app",
+  messagingSenderId: "881593415946",
+  appId: "1:881593415946:web:052c801ab179e1f26022f3",
+  measurementId: "G-3N9FV1RM2R"
 };
 
 // Initialize Firebase
